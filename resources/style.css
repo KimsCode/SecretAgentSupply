@@ -1,76 +1,131 @@
+/*Universal Styles*/
 html {
-  font-family: Helvetica, sans-serif;
   font-size: 18px;
-  color: white;
+  background-color: white;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  line-height: 1.4em;
+}
+
+h1, h4 {
+  font-weight: bold;
 }
 
 .flex-container {
-  display: flex;
-  align-items: center;
-  width: 960px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 /*Header Section*/
 
 header {
   background-color: black;
-  width: 100%;
+  color: white;
 }
 
-header .logo {
+.logo .flex-container {
   display: flex;
-  justify-content: flex-start;
-  font-size: 1rem;
-  padding-top: 0.66rem;
-  padding-bottom: 0.66rem;
+  align-items: center;
+  padding: 12px 0 12px 0.5em;
 }
 
-header img {
+.logo img {
   height: 1.5rem;
-  margin-left: 0.5rem;
-  margin-right: 1rem;
+  padding-right: 15px;
 }
 
 /*Banner Content*/
 
-#banner {
-  display: flex;
-  align-items: center;
-  background-image: url("../resources/moto.jpeg");
+.banner {
+  background: url("../resources/moto.jpeg");
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: auto;
   height: 25rem;
-  margin: auto;
-}
+  }
 
 .new-arrival {
-  display: block;
-  justify-content: flex-start;
-  align-items: center;
-  font-weight: bold;
+  position: relative;
   background-color: black;
+  color: white;
   width: 20rem;
   padding: 2rem 3rem;
+  top: 9em;
   }
 
-#banner h2 {
-  font-size: 1rem;
+.banner h1 {
+  font-size: 2em;
+  line-height: 1.2em;
+  margin: 0.25em 0;
   }
 
-#banner h1 {
-  font-size: 2rem;
+  @media only screen and (max-width: 470px) {
+    .banner {
+      height: 15em;
+    }
+
+    .new-arrival {
+      width: 100%
+      padding: 1em 2em;
+      top: 10em;
+    }
+
+    .new-arrival h4 {
+      font-size: .77rem;
+    }
+
+    .new-arrival h1 {
+      font-size: 1rem;
+    }
   }
 
   /*Menu Items Section*/
 
-  #menu {
-    justify-content: space-between;
-    width: auto;
+  nav {
     background-color: firebrick;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    color: white;
+    }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75em 0;
+    list-style: none;
   }
 
-  .items {
+  .mobile-nav {
+    display: none;
+  }
 
+  @@media only screen and (max-width: 1024px) {
+    nav ul {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  /*Combined Stock Items and Logistical Information*/
+
+  .inventory, .business-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 3em 0 0 0;
+  }
+
+  .stock {
+    width: 30%;
   }
